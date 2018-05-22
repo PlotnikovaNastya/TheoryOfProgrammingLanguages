@@ -1,66 +1,55 @@
 import java.util.Scanner;
-public class Point3d {
-	
+public class Point3d
+	{
 	double x;
 	double y;
 	double z;
-	
-	Point3d(double x, double y, double z){
-		
+	Point3d(double x, double y, double z)
+	{	
 		this.x=x;
 		this.y=y;
 		this.z=z;
 	}
-	
-	Point3d(){
-		
+	Point3d()
+	{	
 		this.x=0.0;
 		this.y=0.0;
 		this.z=0.0;
 	}
-	
-	double getX(){
-		
+	double getX()
+	{	
 		return x;
 	}
-	
-	double getY(){
-		
+	double getY()
+	{	
 		return y;
 	}
-	
-	double getZ(){
-		
+	double getZ()
+	{	
 		return z;
 	}
-	
-	void setX(double x){
-		
+	void setX(double x)
+	{	
 		this.x=x;
 	}
-	
-	void setY(double y){
-		
+	void setY(double y)
+	{	
 		this.y=y;
 	}
-	
-	void setZ(double z){
-		
+	void setZ(double z)
+	{	
 		this.z=z;
 	}
-	
-	public static boolean method(Point3d a, Point3d b){ 
-		
+	public static boolean method(Point3d a, Point3d b)
+	{ 	
 		return (a.x == b.x && a.y == b.y && a.z == b.z); 
 	} 
-	
-	public static double distanceTo(Point3d a, Point3d b){ 
-		
+	public static double distanceTo(Point3d a, Point3d b)
+	{ 	
 		return Math.sqrt(Math.pow((b.x - a.x), 2) + Math.pow((b.y - a.y), 2) + Math.pow((b.z - a.z), 2)); 
 	} 
-	
-	public static void input(Point3d a){ 
-		
+	public static void input(Point3d a)
+	{ 	
 		Scanner scan = new Scanner(System.in); 
 		System.out.print("x: "); 
 		double x = scan.nextDouble(); 
@@ -71,38 +60,32 @@ public class Point3d {
 		System.out.print("z: "); 
 		double z = scan.nextDouble(); 
 		a.setZ(z); 
-	} 
-
-	public static void output(Point3d a){ 
-		
+	}
+	public static void output(Point3d a)
+	{ 	
 		System.out.print("x = " + a.getX() + '\n'); 
 		System.out.print("y = " + a.getY() + '\n'); 
 		System.out.print("z = " + a.getZ() + "\n"); 
 
 	} 
-	
-	public static void main(String[] args) {
+	public static void main(String[] args)
+	{
 		// TODO Auto-generated method stub
 		Point3d first = new Point3d(1.0, 2.0, 3.0); 
 		Point3d second = new Point3d(); 
-
 		System.out.print("Введите координаты точки A\n"); 
 		input(first); 
-
 		System.out.print("Введите координаты точки B\n"); 
 		input(second); 
-
 		System.out.print("Первая точка = \n"); 
 		output(first); 
-
 		System.out.print("Вторая точка = \n"); 
 		output(second); 
-
 		if(Point3d.method(first, second)) 
 			System.out.print("Точки равны!\n"); 
 		else 
 			System.out.print("Точки не равны!\n"); 
-
 		System.out.print("Расстояние между двумя точками в пространстве: " + distanceTo(first, second)); 
 	} 
 }
+
